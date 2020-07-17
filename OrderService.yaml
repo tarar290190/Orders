@@ -26,12 +26,12 @@ kind: Service
 metadata:
   name: orderservice
 spec:
+  type: NodePort
   selector:
     app: orderservice
   ports:
     - protocol: TCP
       port: 80
       targetPort: 15001 
-  externalIPs:
-    - 80.11.12.10
+  
       
