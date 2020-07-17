@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orderservicedevelopment
+  name: orderservice-development
   labels:
     app: orderservice
 spec:
@@ -13,12 +13,12 @@ spec:
       metadata: 
         labels:
           app: orderservice
-        spec:
-          containers:
-            - name: orderservice
-              image: tarar290190/oderservice:v1.0
-              ports:
-              - containerPorts: 15001
+      spec:
+        containers:
+          - name: orderservice
+            image: tarar290190/oderservice:v1.0
+            ports:
+            - containerPorts: 15001
 
 ---
 apiVersion: v1
