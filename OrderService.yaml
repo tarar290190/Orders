@@ -26,7 +26,7 @@ kind: Service
 metadata:
   name: orderservice
 spec:
-  clusterIP: 10.0.162.149
+  clusterIP: 10.39.240.10
   selector:
     app: orderservice
   ports:
