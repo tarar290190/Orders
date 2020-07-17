@@ -22,7 +22,7 @@ spec:
 
 ---
 apiVersion: v1
-kind: Sevice
+kind: Service
 metadata:
   name: orderservice-service
 spec:
