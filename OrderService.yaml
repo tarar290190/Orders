@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orderservice-development
+  name: orderservicedevelopment
   labels:
     app: orderservice
 spec:
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: orderservice-service
+  name: orderservice
 spec:
   selector:
     app: orderservice
