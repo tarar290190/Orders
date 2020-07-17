@@ -29,7 +29,7 @@ spec:
   selector:
     app: orderservice
   ports:
-    - protocol: HTTP
+    - protocol: TCP
       port: 80
       targetPort: 15001 
       nodePort: 80 
