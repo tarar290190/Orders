@@ -28,10 +28,10 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: orderservice
+    app: orderservice-development
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 15001 
+      targetPort: 80 
   
       
