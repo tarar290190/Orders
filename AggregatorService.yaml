@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aggregatorservice-development
+  labels:
+    app: aggregatorservice
+spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: aggregatorservice
+    template:
+      metadata: 
+        labels:
+          app: aggregatorservice
+      spec:
+        containers:
+          - name: aggregatorservice
+            image: tarar290190/aggregatorservice:v1.0
+            ports:
+            - containerPort: 80
