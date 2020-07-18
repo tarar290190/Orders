@@ -5,33 +5,33 @@ metadata:
   labels:
     app: mysql
 spec:
-    replicas: 1
-    selector:
-      matchLabels:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata: 
+      labels:
         app: mysql
-    template:
-      metadata: 
-        labels:
-          app: mysql
-      spec:
-        containers:
-        - name: mysql
-          image: mysql
-          ports:
-          - containerPort: 3306
-          env:
-            - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef: 
-                  name: mysql-secret
-                  key: mysql-root-password
-          volumeMounts: 
-          - name: mysql-volume
-            mountpath: /var/lib/mysql
-        volumes:
+    spec:
+      containers:
+      - name: mysql
+        image: mysql
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef: 
+                name: mysql-secret
+                key: mysql-root-password
+        volumeMounts: 
         - name: mysql-volume
-          persistentVolumeClaim:
-            claimName: mysql-claim  
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: mysql-claim  
          
          
 
