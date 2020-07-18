@@ -19,15 +19,15 @@ spec:
               image: mysql
               ports:
               - containerPort: 3306
-              env:
-              - name: MYSQL_USER
-                valueFrom:
-                  secretKeyRef: 
-                    name: mysql-secret
-                    key: mysql-root-username 
-              - name: MYSQL_PASSWORD
-                 valueFrom:
-                  secretKeyRef: 
-                    name: mysql-secret
-                    key: mysql-root-password
+          env:
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef: 
+                  name: mysql-secret
+                  key: mysql-root-username 
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef: 
+                  name: mysql-secret
+                  key: mysql-root-password
 
