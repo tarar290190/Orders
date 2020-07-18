@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userservice-development
+  labels:
+    app: userservice
+spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: userservice
+    template:
+      metadata: 
+        labels:
+          app: userservice
+      spec:
+        containers:
+          - name: userservice
+            image: tarar290190/userservice:v1.0
+            ports:
+            - containerPort: 80
