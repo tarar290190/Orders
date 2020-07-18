@@ -26,13 +26,13 @@ kind: Service
 metadata:
   name: order-service
 spec:
-  type: NodePort
+  type: ClusterIp
   selector:
     app: orderservice
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      NodePort: 31000
+      
   
       
