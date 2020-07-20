@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orderservice-development
+  name: userservice-development
   labels:
-    app: orderservice
+    app: userservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: orderservice
+      app: userservice
   template:
     metadata: 
       labels:
-        app: orderservice
+        app: userservice
     spec:
       containers:
-      - name: orderservice
-        image: tarar290190/orderservice:v6.0
+      - name: userservice
+        image: tarar290190/userservice:v2.0
         ports:
         - containerPort: 80
         env: 
@@ -27,15 +27,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: order-service
+  name: user-service
 spec:
   type: ClusterIP
   selector:
-    app: orderservice
+    app: userservice
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      
-  
       

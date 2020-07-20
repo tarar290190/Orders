@@ -5,17 +5,24 @@ metadata:
   labels:
     app: aggregatorservice
 spec:
-    replicas: 1
-    selector:
-      matchLabels:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aggregatorservice
+  template:
+    metadata: 
+      labels:
         app: aggregatorservice
-    template:
-      metadata: 
-        labels:
-          app: aggregatorservice
-      spec:
-        containers:
-          - name: aggregatorservice
-            image: tarar290190/aggregatorservice:v1.0
-            ports:
-            - containerPort: 80
+    spec:
+      containers:
+      - name: aggregatorservice
+        image: tarar290190/aggregatorservice:v.0
+        ports:
+        - containerPort: 80
+        env: 
+        - name: UserServiceUrl
+          value: http://10.39.245.65
+        - name: OrderServiceUrl
+          value: http://10.39.245.64
+        - name: JaegerURL
+          value: 10.39.247.117
