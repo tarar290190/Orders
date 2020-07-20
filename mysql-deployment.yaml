@@ -31,7 +31,22 @@ spec:
       volumes:
       - name: mysql-volume
         persistentVolumeClaim:
-          claimName: mysql-claim  
+          claimName: mysql-claim
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
+      
          
          
 
